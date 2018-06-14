@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+</head>
+<body>
+<span th:if="${weatherInfo}!=null" th:text="${weatherInfo}"></span>
+<div style="text-align: center;">
+    <form method="post" action="/">
+        <input th:name="city" placeholder="Podaj miasto">
+        <input type="submit" value="wyslij">
+    </form>
+    <p th:text="${temp}" th:style="'color: '+ ${temp > 250 ? 'green': 'red'}" ></p>
+</div>
+
+</body>
+</html>
